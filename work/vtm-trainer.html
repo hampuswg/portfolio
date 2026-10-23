@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redesigning the operator trainer — Hampus Wargsjö</title>
+<meta name="description" content="Case study: a UI redesign of assembly training software, evaluated with twelve testers before release.">
+<link rel="alternate" hreflang="sv" href="/sv/work/vtm-trainer.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="wrap site-head">
+  <a class="name" href="/">Hampus Wargsjö</a>
+  <nav aria-label="Main">
+    <a href="/#work" aria-current="page">Work</a>
+    <a href="/#about">About</a>
+    <a href="/#contact">Contact</a>
+    <a class="lang" href="/sv/work/vtm-trainer.html" lang="sv" hreflang="sv">Svenska</a>
+  </nav>
+</header>
+
+<main id="main" class="wrap">
+  <div class="case-head">
+    <a class="back" href="/#work">All work</a>
+    <h1>Redesigning the operator trainer</h1>
+    <p class="lede">The trainer teaches car-factory operators to pick the right tool and part for every step on the line. Its interface had grown piece by piece. I redesigned it and tested the prototype before release.</p>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>UI design, prototype, test plan and analysis</dd></div>
+      <div><dt>When</dt><dd>Autumn 2019, Vizendo</dd></div>
+      <div><dt>Users</dt><dd>Assembly operators; training engineers who author content</dd></div>
+      <div><dt>Methods</dt><dd>Interactive prototype, component-by-component survey, thematic coding</dd></div>
+    </dl>
+  </div>
+
+  <article class="case">
+    <figure>
+      <div class="todo">Add: the old trainer next to the new design, same training step.</div>
+      <figcaption>Before and after.</figcaption>
+    </figure>
+
+    <h2>The problem</h2>
+    <p>Operators use the trainer to rehearse an assembly sequence before they do it on the line. For each operation they choose a tool and a part; if they get it wrong, the software shows them the right one with a blue flashing highlight. Around that loop sit an operation list, the operation text, information about the sequence and a help menu.</p>
+    <p>Each of those had been added when a customer needed it, and it showed. Panels used different backgrounds and sizes, the layout had been designed for one desktop resolution, and it now had to work on tablets as well.</p>
+    <p>The goal was a consistent, modern interface that worked from an iPad up to a 4K screen.</p>
+
+    <h2>What I did</h2>
+    <p>I rebuilt the layout around the core loop: tool and part selection stays dominant, everything else moves to the edges and collapses when it isn't needed. Help moved behind a single button. Panels got one shared visual treatment.</p>
+    <figure>
+      <div class="todo">Add: the prototype screens, ideally annotated with the main layout decisions.</div>
+      <figcaption>The prototype that went out for testing.</figcaption>
+    </figure>
+
+    <h2>Testing it</h2>
+    <p>Before handing it to development I put the clickable prototype in front of twelve colleagues from across the company, people who build, sell and support the trainer. For each part of the interface I asked two open questions: how does it work, and how does it look. Keeping them apart made it easier to separate usability problems from taste.</p>
+    <p>I then coded every free-text answer by theme. Some answers touched several themes.</p>
+
+    <ul class="findings" aria-label="Themes in the feedback, number of testers out of 12">
+      <li style="--v:7"><span class="label">Icons weren't self-explanatory; testers asked for labels on hover</span><span class="n">7</span><span class="track"><span class="fill"></span></span></li>
+      <li style="--v:6"><span class="label">Sizes didn't scale well across tablet, 1080p and 4K</span><span class="n">6</span><span class="track"><span class="fill"></span></span></li>
+      <li style="--v:6"><span class="label">Hidden interactions, like double-click to enlarge a part, weren't discoverable</span><span class="n">6</span><span class="track"><span class="fill"></span></span></li>
+      <li style="--v:5"><span class="label">Panels still didn't look consistent</span><span class="n">5</span><span class="track"><span class="fill"></span></span></li>
+      <li style="--v:4"><span class="label">Hard to tell the part you selected from the correct one when both were highlighted</span><span class="n">4</span><span class="track"><span class="fill"></span></span></li>
+    </ul>
+
+    <blockquote>
+      <p>I wouldn't understand any of those icons for a first time user.</p>
+      <footer>Tester, about the help menu</footer>
+    </blockquote>
+
+    <div class="insight">
+      <strong>The finding that changed my thinking</strong>
+      <p>One tester pointed out that a question-mark icon usually means "read the manual". In the trainer, help means "I'm stuck on the line right now". The icon was correct by convention and wrong for the situation.</p>
+    </div>
+
+    <p>The feedback also confirmed what worked. Testers called the new look clearer and calmer, and the sequence panel's "last updated" date turned out to matter to people supporting customers: it let them check whether a customer had pushed new files before blaming the software.</p>
+
+    <h2>What changed</h2>
+    <p class="todo">Fill in: what you changed after the test. For example hover labels on icons, minimum sizes for tablets, a visible zoom affordance, a clearer selected vs. correct state, a stronger help button. Name what shipped and what was left out.</p>
+    <figure>
+      <div class="todo">Add: one or two after-test details, e.g. the new help button or the selected/correct states.</div>
+    </figure>
+
+    <h2>What I'd do differently</h2>
+    <p>I tested with colleagues because they were available, and they knew the old trainer far better than a new operator would. Asking what people <em>thought</em> of each panel also produced more opinions than evidence.</p>
+    <p>Today I would give a handful of real operators a short, timed task, such as completing one sequence with a mistake built in, and watch where they hesitate. The survey was still worth doing: it was cheap, it came back in two days, and the strongest themes were exactly the kind a task-based test would have shown.</p>
+
+    <div class="next">
+      <p>Next case</p>
+      <a href="/work/lifearm.html">A prosthetic arm for Nairobi</a>
+    </div>
+  </article>
+</main>
+
+<footer class="wrap site-foot">
+  <span>Hampus Wargsjö</span>
+  <a href="mailto:hampuswg@gmail.com">hampuswg@gmail.com</a>
+</footer>
+</body>
+</html>

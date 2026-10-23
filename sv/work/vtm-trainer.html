@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ny design för operatörsträningen — Hampus Wargsjö</title>
+<meta name="description" content="Case: nytt gränssnitt för monteringsträning, utvärderat med tolv testare före release.">
+<link rel="alternate" hreflang="en" href="/work/vtm-trainer.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Hoppa till innehållet</a>
+<header class="wrap site-head">
+  <a class="name" href="/sv/">Hampus Wargsjö</a>
+  <nav aria-label="Huvudmeny">
+    <a href="/sv/#work" aria-current="page">Arbeten</a>
+    <a href="/sv/#about">Om mig</a>
+    <a href="/sv/#contact">Kontakt</a>
+    <a class="lang" href="/work/vtm-trainer.html" lang="en" hreflang="en">English</a>
+  </nav>
+</header>
+
+<main id="main" class="wrap">
+  <div class="case-head">
+    <a class="back" href="/sv/#work">Alla arbeten</a>
+    <h1>Ny design för operatörsträningen</h1>
+    <p class="lede">Träningsprogrammet lär operatörer i bilfabriker att välja rätt verktyg och rätt detalj i varje moment på linan. Gränssnittet hade vuxit fram bit för bit. Jag gjorde om det och testade prototypen före release.</p>
+    <dl class="facts">
+      <div><dt>Roll</dt><dd>UI-design, prototyp, testupplägg och analys</dd></div>
+      <div><dt>När</dt><dd>Hösten 2019, Vizendo</dd></div>
+      <div><dt>Användare</dt><dd>Monteringsoperatörer; ingenjörer som skapar utbildningarna</dd></div>
+      <div><dt>Metoder</dt><dd>Klickbar prototyp, enkät per komponent, tematisk kodning</dd></div>
+    </dl>
+  </div>
+
+  <article class="case">
+    <figure>
+      <div class="todo">Lägg till: den gamla träningsvyn bredvid den nya, samma moment.</div>
+      <figcaption>Före och efter.</figcaption>
+    </figure>
+
+    <h2>Problemet</h2>
+    <p>Operatörer använder programmet för att öva en monteringssekvens innan de gör den på linan. För varje operation väljer de ett verktyg och en detalj; väljer de fel visar programmet rätt val med en blå blinkande markering. Runt den loopen finns en operationslista, operationstexten, information om sekvensen och en hjälpmeny.</p>
+    <p>Varje del hade lagts till när en kund behövde den, och det syntes. Panelerna hade olika bakgrunder och storlekar, layouten var gjord för en enda skärmupplösning, och nu skulle den fungera på surfplattor också.</p>
+    <p>Målet var ett enhetligt, modernt gränssnitt som fungerade från iPad upp till 4K-skärm.</p>
+
+    <h2>Det här gjorde jag</h2>
+    <p>Jag byggde om layouten kring kärnloopen: valet av verktyg och detalj står i centrum, allt annat flyttar ut mot kanterna och fälls ihop när det inte behövs. Hjälpen samlades bakom en knapp. Panelerna fick ett gemensamt visuellt uttryck.</p>
+    <figure>
+      <div class="todo">Lägg till: prototypens skärmar, gärna med de viktigaste layoutbesluten utmärkta.</div>
+      <figcaption>Prototypen som gick ut på test.</figcaption>
+    </figure>
+
+    <h2>Testet</h2>
+    <p>Innan den lämnades över till utveckling lät jag tolv kollegor från hela företaget, personer som bygger, säljer och supportar programmet, testa den klickbara prototypen. För varje del av gränssnittet ställde jag två öppna frågor: hur fungerar det, och hur ser det ut. Att hålla isär dem gjorde det lättare att skilja användbarhetsproblem från smak.</p>
+    <p>Sedan kodade jag alla fritextsvar efter tema. Vissa svar berörde flera teman.</p>
+
+    <ul class="findings" aria-label="Teman i feedbacken, antal testare av 12">
+      <li style="--v:7"><span class="label">Ikonerna var inte självförklarande; testarna ville ha förklaringar vid hover</span><span class="n">7</span><span class="track"><span class="fill"></span></span></li>
+      <li style="--v:6"><span class="label">Storlekarna skalade inte bra mellan surfplatta, 1080p och 4K</span><span class="n">6</span><span class="track"><span class="fill"></span></span></li>
+      <li style="--v:6"><span class="label">Dolda interaktioner, som dubbelklick för att förstora en detalj, upptäcktes inte</span><span class="n">6</span><span class="track"><span class="fill"></span></span></li>
+      <li style="--v:5"><span class="label">Panelerna såg fortfarande inte enhetliga ut</span><span class="n">5</span><span class="track"><span class="fill"></span></span></li>
+      <li style="--v:4"><span class="label">Svårt att skilja den valda detaljen från den rätta när båda var markerade</span><span class="n">4</span><span class="track"><span class="fill"></span></span></li>
+    </ul>
+
+    <blockquote>
+      <p>I wouldn't understand any of those icons for a first time user.</p>
+      <footer>Testare, om hjälpmenyn</footer>
+    </blockquote>
+
+    <div class="insight">
+      <strong>Fyndet som ändrade mitt sätt att tänka</strong>
+      <p>En testare påpekade att ett frågetecken oftast betyder "läs manualen". I träningen betyder hjälp snarare "jag sitter fast på linan just nu". Ikonen var rätt enligt konventionen och fel för situationen.</p>
+    </div>
+
+    <p>Feedbacken bekräftade också vad som fungerade. Testarna tyckte att det nya utseendet var tydligare och lugnare, och datumet för senaste uppdatering i sekvenspanelen visade sig vara viktigt för dem som supportar kunder: de kunde se om en kund hade laddat upp nya filer innan de skyllde på programmet.</p>
+
+    <h2>Det här ändrades</h2>
+    <p class="todo">Fyll i: vad du ändrade efter testet. Till exempel förklaringar vid hover, minsta storlekar för surfplattor, en synlig förstoringsfunktion, tydligare skillnad mellan valt och rätt, en tydligare hjälpknapp. Skriv vad som släpptes och vad som lämnades.</p>
+    <figure>
+      <div class="todo">Lägg till: en eller två detaljer efter testet, t.ex. den nya hjälpknappen eller lägena valt/rätt.</div>
+    </figure>
+
+    <h2>Det här skulle jag göra annorlunda</h2>
+    <p>Jag testade med kollegor eftersom de fanns till hands, och de kände det gamla programmet mycket bättre än en ny operatör gör. Att fråga vad folk <em>tyckte</em> om varje panel gav också mer åsikter än belägg.</p>
+    <p>I dag skulle jag låta några riktiga operatörer göra en kort uppgift på tid, till exempel en sekvens med ett inbyggt fel, och se var de tvekar. Enkäten var ändå värd att göra: den var billig, svaren kom in på två dagar, och de starkaste temana var precis sådana som ett uppgiftsbaserat test hade visat.</p>
+
+    <div class="next">
+      <p>Nästa case</p>
+      <a href="/sv/work/lifearm.html">En armprotes för Nairobi</a>
+    </div>
+  </article>
+</main>
+
+<footer class="wrap site-foot">
+  <span>Hampus Wargsjö</span>
+  <a href="mailto:hampuswg@gmail.com">hampuswg@gmail.com</a>
+</footer>
+</body>
+</html>

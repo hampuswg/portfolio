@@ -241,3 +241,8 @@ figcaption { font-size: 0.95rem; color: var(--ink-soft); margin-top: 8px; }
 p.todo { min-height: 0; display: block; text-align: left; padding: 14px 18px; }
 
 .findings-scale { font-size: 0.95rem; color: var(--ink-soft); margin: 1.4em 0 -0.6em; }
+
+/* Windows ClearType puts colour fringes on very large type. Promoting the
+   display headlines to their own layer makes Firefox/Chrome use grayscale
+   anti-aliasing for them only. No effect on Mac/iOS, which are grayscale already. */
+.hero h1, .case-head h1 { will-change: transform; }

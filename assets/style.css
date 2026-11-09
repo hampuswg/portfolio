@@ -101,15 +101,14 @@ a:hover { color: var(--signal); }
   grid-template-columns: repeat(var(--years), 1fr); row-gap: 14px; }
 .timeline li { position: relative; }
 .bar {
-  display: flex; align-items: center; gap: 10px;
-  height: 34px; padding: 0 12px;
+  display: block; height: 34px; line-height: 34px; padding: 0 12px;
   background: #fff; color: #23272b;
   border-radius: 999px; text-decoration: none; font-size: 0.95rem; font-weight: 600;
   white-space: nowrap; overflow: hidden;
 }
 .bar.fade { background: linear-gradient(90deg, #fff 55%, rgba(255,255,255,0.25)); }
 a.bar:hover { color: var(--signal); box-shadow: 0 0 0 3px var(--signal); }
-.bar small { font-weight: 400; color: #5d636a; }
+.bar small { font-weight: 400; color: #5d636a; margin-left: 6px; }
 .years { display: grid; grid-template-columns: repeat(var(--years), 1fr);
   margin-top: 18px; padding-top: 10px; border-top: 1px dotted rgba(255,255,255,0.6);
   font-size: 0.85rem; color: rgba(255,255,255,0.85); }
@@ -118,7 +117,7 @@ a.bar:hover { color: var(--signal); box-shadow: 0 0 0 3px var(--signal); }
 @media (max-width: 720px) {
   .timeline { grid-template-columns: 1fr !important; }
   .timeline li { grid-column: 1 / -1 !important; }
-  .bar { white-space: normal; height: auto; min-height: 34px; padding: 6px 14px; border-radius: 18px; }
+  .bar { white-space: normal; height: auto; min-height: 34px; line-height: 1.35; padding: 7px 14px; border-radius: 18px; }
   .years { display: none; }
 }
 
